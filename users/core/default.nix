@@ -5,5 +5,12 @@
     ./cli.nix
     ./bat.nix
     ./eza.nix
+    # TODO:
+    # - Starship
+    # - Tmux
+    # - Tmuxinator
+    # - neovim
+    # - kitty
+    # - Different Desktops
   ];
 }
