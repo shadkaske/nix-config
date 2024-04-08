@@ -72,7 +72,7 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main home-manager configuration file <
-            ./users/nix-testvm.nix
+            ./users/shadkaske/nix-testvm.nix
           ];
         };
       };

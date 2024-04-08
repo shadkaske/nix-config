@@ -6,6 +6,8 @@
     git
     curl
     fd
+    python3
+    virtualenv
   ];
 
   programs.neovim = {
