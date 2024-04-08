@@ -3,5 +3,6 @@
     ./zsh.nix
     ./fzf.nix
     ./cli.nix
+    ./bat.nix
   ];
 }
