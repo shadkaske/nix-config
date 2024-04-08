@@ -4,7 +4,7 @@
     enableCompletion = true;
     enableVteIntegration = true;
     autocd = true;
-    # TODO: Customize highlight colors
+    # TODO: Customize highlight colors for zsh syntax
     syntaxHighlighting.enable = true;
     dotDir = ".config/zsh";
     history = {
@@ -24,8 +24,6 @@
       tree = "eza --tree";
       cat = "bat";
     };
-    # TODO: Custom Plugins Needed
-    #     autoswitch_virtualenv
     plugins = [
       {
         name = "zsh-autosuggestions";
@@ -66,15 +64,12 @@
     ];
     oh-my-zsh = {
       enable = true;
-      theme = "af-magic";
       plugins = [
         "git"
         # TODO: Enable after configuring git
         # "git-flow"
-        # TODO: Enable after configuring tmux
-        # "tmux"
-        # TODO: Enable This After Configuring Docker
-        # "docker-compose"
+        "tmux"
+        "docker-compose"
         "firewalld"
         "systemd"
         "ssh-agent"

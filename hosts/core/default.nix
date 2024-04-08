@@ -7,8 +7,7 @@
     ./settings/editor.nix
     ./settings/utilities.nix
     ./settings/user.nix
-    # TODO:
-    # - firewall
+    # TODO: firewall
   ];
 }
 # vim: ts=2 sw=2 et
