@@ -14,12 +14,68 @@
     shellAliases = {
       gs = "git status";
       gpl = "git pull";
+      ls = "eza";
+      l = "eza --git-ignore";
+      ll = "eza --all --header --long";
+      llm = "eza --all --header --long --sort=modified";
+      la = "eza -lbhHigUmuSa";
+      lx = "eza -lbhHigUmuSa@";
+      lt = "eza --tree";
+      tree = "eza --tree";
+      cat = "bat";
     };
+    # TODO: Custom Plugins Needed
+    #     autoswitch_virtualenv
+    plugins = [
+      {
+        name = "zsh-autosuggestions";
+        src = pkgs.fetchFromGitHub {
+          owner = "zsh-users";
+          repo = "zsh-autosuggestions";
+          rev = "v0.4.0";
+          sha256 = "0z6i9wjjklb4lvr7zjhbphibsyx51psv50gm07mbb0kj9058j6kc";
+        };
+      }
+      {
+        name = "artisan";
+        src = pkgs.fetchFromGitHub {
+          owner = "jessarcher";
+          repo = "zsh-artisan";
+          rev = "master";
+          sha256 = "sha256-CsNItXMH4zGJTiO5tXPU+bC8xB4siuGOv+arQX4VBjU=";
+        };
+      }
+      {
+        name = "zsh-vi-mode";
+        src = pkgs.fetchFromGitHub {
+          owner = "jeffreytse";
+          repo = "zsh-vi-mode";
+          rev = "v0.11.0";
+          sha256 = "sha256-xbchXJTFWeABTwq6h4KWLh+EvydDrDzcY9AQVK65RS8=";
+        };
+      }
+      {
+        name = "autoswitch_virtualenv";
+        src = pkgs.fetchFromGitHub {
+          owner = "MichaelAquilina";
+          repo = "zsh-autoswitch-virtualenv";
+          rev = "3.7.1";
+          sha256 = "sha256-hwg9wDMU2XqJ5FQEwMVVaz0n+xZ8NI82tH9VhLfFRC4=";
+        };
+      }
+    ];
     oh-my-zsh = {
       enable = true;
       theme = "af-magic";
       plugins = [
         "git"
+        # TODO: Enable after configuring git
+        # "git-flow"
+        # TODO: Enable after configuring tmux
+        # "tmux"
+        # TODO: Enable This After Configuring Docker
+        # "docker-compose"
+        "firewalld"
         "systemd"
         "ssh-agent"
       ];
@@ -45,6 +101,7 @@
       export MANROFFOPT="-c"
       export AUTOSWITCH_MESSAGE_FORMAT="Switching to %venv_name   %py_version"
       export LANG=en_US.UTF-8
+      export MANPAGER="sh -c 'col -bx | bat -l man -p'"
     '';
     initExtra = ''
       # Functions

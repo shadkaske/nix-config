@@ -4,5 +4,6 @@
     ./fzf.nix
     ./cli.nix
     ./bat.nix
+    ./eza.nix
   ];
 }
