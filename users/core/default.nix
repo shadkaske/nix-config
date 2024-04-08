@@ -5,6 +5,7 @@
     ./cli/cli.nix
     ./cli/bat.nix
     ./cli/eza.nix
+    ./cli/tmux.nix
     # TODO:
     # - Starship
     # - Tmux
