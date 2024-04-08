@@ -7,12 +7,9 @@
     ./cli/eza.nix
     ./cli/tmux.nix
     ./cli/starship.nix
-    # TODO:
-    # - Starship
-    # - Tmux
-    # - Tmuxinator
-    # - neovim
-    # - kitty
-    # - Different Desktops
+    # TODO: Tmuxinator
+    # TODO:neovim
+    # TODO:kitty
+    # TODO:Different Desktops
   ];
 }
