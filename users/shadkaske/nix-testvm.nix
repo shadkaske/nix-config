@@ -31,6 +31,12 @@
   };
 
   # home.packages = with pkgs; [ steam ];
+  fonts.fontconfig.enable = true;
+  home.packages = [
+    (pkgs.nerdfonts.override {
+      fonts = [ "JetBrainsMono" ];
+    })
+  ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;

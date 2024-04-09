@@ -7,9 +7,15 @@
     ./cli/eza.nix
     ./cli/tmux.nix
     ./cli/starship.nix
-    # TODO: Tmuxinator
+    ./applications/kitty.nix
     # TODO:neovim
-    # TODO:kitty
     # TODO:Different Desktops
+  ];
+
+  fonts.fontconfig.enable = true;
+  home.packages = [
+    (pkgs.nerdfonts.override {
+      fonts = [ "JetBrainsMono" ];
+    })
   ];
 }
