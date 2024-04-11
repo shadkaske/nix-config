@@ -7,7 +7,7 @@ let
       owner = "pschmitt";
       repo = "tmux-ssh-split";
       rev = "bccb77fa45077763967978a32dc401767f170248";
-      sha256 = "sha256-Z16laz2Xeyg4/eCbS5qqXxLB6xpADvHWKWlfJqLYO/k=";
+      sha256 = "sha256-Z16laz2Xeyg4/eCbS5qqXxLB6xpADvHWKWlfJqLYO/k";
     };
   };
 in
@@ -53,7 +53,7 @@ in
       bind "'" last-window
       unbind ";"
       bind ";" switch-client -l
-      bind r source-file ~/.tmux.conf \; display-message "Tmux Config Reloaded ..."
+      bind r source-file ${config.xdg.configHome}/tmux/tmux.conf \; display-message "Tmux Config Reloaded ..."
       bind S set status
       bind-key -T copy-mode-vi 'v' send -X begin-selection
       bind-key -T copy-mode-vi 'C-v' send -X begin-selection \; send -X rectangle-toggle
@@ -99,22 +99,23 @@ in
           set -g @catppuccin_directory_text "#{pane_current_path}"
         '';
       }
-      {
-        plugin = tmux-ssh-split;
-        extraConfig = ''
-          set-option -g @ssh-split-keep-cwd "true"
-          set-option -g @ssh-split-keep-remote-cwd "true"
-          set-option -g @ssh-split-fail "false"
-          set-option -g @ssh-split-no-env "false"
-          set-option -g @ssh-split-no-shell "false"
-          set-option -g @ssh-split-strip-cmd "true"
-          set-option -g @ssh-split-verbose "true"
-          set-option -g @ssh-split-debug "false"
-          set-option -g @ssh-split-h-key "|"
-          set-option -g @ssh-split-v-key "V"
-          set-option -g @ssh-split-w-key "C"
-        '';
-      }
+      # TODO: Fix the error when loading this plugin
+      # {
+      #   plugin = tmux-ssh-split;
+      #   extraConfig = ''
+      #     set-option -g @ssh-split-keep-cwd "true"
+      #     set-option -g @ssh-split-keep-remote-cwd "true"
+      #     set-option -g @ssh-split-fail "false"
+      #     set-option -g @ssh-split-no-env "false"
+      #     set-option -g @ssh-split-no-shell "false"
+      #     set-option -g @ssh-split-strip-cmd "true"
+      #     set-option -g @ssh-split-verbose "true"
+      #     set-option -g @ssh-split-debug "false"
+      #     set-option -g @ssh-split-h-key "|"
+      #     set-option -g @ssh-split-v-key "V"
+      #     set-option -g @ssh-split-w-key "C"
+      #   '';
+      # }
     ];
   };
 }
