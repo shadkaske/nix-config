@@ -1,6 +1,7 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   programs.lazygit = {
     enable = true;
+    package = pkgs.unstable.lazygit;
     settings = {
       gui = {
         showRandomTip = false;
