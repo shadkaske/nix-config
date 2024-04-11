@@ -7,6 +7,8 @@ with lib.hm.gvariant;
     ./settings/dconf.nix
   ];
 
+  dconf.enable = true;
+
   gtk = {
     enable = true;
 
@@ -44,8 +46,8 @@ with lib.hm.gvariant;
     };
 
     iconTheme = {
-      name = "Adwaita";
-      package = pkgs.gnome.adwaita-icon-theme;
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
 
     theme = {
