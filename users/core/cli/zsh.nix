@@ -12,6 +12,7 @@
       ignoreAllDups = true;
     };
     shellAliases = {
+    # TODO: Get the rest of my aliases
       gs = "git status";
       gpl = "git pull";
       ls = "eza";
@@ -23,6 +24,7 @@
       lt = "eza --tree";
       tree = "eza --tree";
       cat = "bat";
+      lg = "lazygit";
     };
     plugins = [
       {
