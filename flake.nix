@@ -62,6 +62,13 @@
             ./hosts/nix-testvm
           ];
         };
+        galagopro = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main nixos configuration file <
+            ./hosts/galagopro
+          ];
+        };
       };
 
       # Standalone home-manager configuration entrypoint
@@ -73,6 +80,14 @@
           modules = [
             # > Our main home-manager configuration file <
             ./users/shadkaske/nix-testvm.nix
+          ];
+        };
+        "shadkaske@galagopro" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main home-manager configuration file <
+            ./users/shadkaske/galagopro.nix
           ];
         };
       };
