@@ -10,6 +10,7 @@
     ./cli/git.nix
     ./cli/lazygit.nix
     ./applications/kitty.nix
+    ./gnome
     # TODO:neovim
     # TODO:Different Desktops
   ];
