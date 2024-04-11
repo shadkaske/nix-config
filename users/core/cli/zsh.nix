@@ -68,8 +68,7 @@
       enable = true;
       plugins = [
         "git"
-        # TODO: Enable after configuring git
-        # "git-flow"
+        "git-flow"
         "tmux"
         "docker-compose"
         "firewalld"
