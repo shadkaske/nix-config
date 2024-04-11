@@ -4,7 +4,6 @@
     enableCompletion = true;
     enableVteIntegration = true;
     autocd = true;
-    # TODO: Customize highlight colors for zsh syntax
     dotDir = ".config/zsh";
     history = {
       expireDuplicatesFirst = true;
