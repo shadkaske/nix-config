@@ -27,30 +27,12 @@
     };
     plugins = [
       {
-        name = "zsh-autosuggestions";
-        src = pkgs.fetchFromGitHub {
-          owner = "zsh-users";
-          repo = "zsh-autosuggestions";
-          rev = "v0.4.0";
-          sha256 = "0z6i9wjjklb4lvr7zjhbphibsyx51psv50gm07mbb0kj9058j6kc";
-        };
-      }
-      {
         name = "artisan";
         src = pkgs.fetchFromGitHub {
           owner = "jessarcher";
           repo = "zsh-artisan";
           rev = "master";
           sha256 = "sha256-CsNItXMH4zGJTiO5tXPU+bC8xB4siuGOv+arQX4VBjU=";
-        };
-      }
-      {
-        name = "zsh-vi-mode";
-        src = pkgs.fetchFromGitHub {
-          owner = "jeffreytse";
-          repo = "zsh-vi-mode";
-          rev = "v0.11.0";
-          sha256 = "sha256-xbchXJTFWeABTwq6h4KWLh+EvydDrDzcY9AQVK65RS8=";
         };
       }
       {
@@ -66,6 +48,16 @@
         name = "fast-syntax-highlighting";
         src = pkgs.zsh-fast-syntax-highlighting;
         file = "share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh";
+      }
+      {
+        name = "zsh-vi-mode";
+        src = pkgs.zsh-vi-mode;
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+      }
+      {
+        name = "zsh-autosuggestions";
+        src = pkgs.zsh-autosuggestions;
+        file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
       }
     ];
     oh-my-zsh = {
