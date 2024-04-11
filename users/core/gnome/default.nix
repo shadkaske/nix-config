@@ -3,6 +3,10 @@
 with lib.hm.gvariant;
 
 {
+  imports = [
+    ./settings/dconf.nix
+  ];
+
   gtk = {
     enable = true;
 
@@ -60,53 +64,5 @@ with lib.hm.gvariant;
 
   services = {
     mpris-proxy.enable = true;
-  };
-
-  dconf.settings = {
-    "org/gnome/desktop/input-sources" = {
-      sources = [ (mkTuple [ "xkb" "us" ]) ];
-      xkb-options = [ "ctrl:nocaps" ];
-    };
-
-    "org/gnome/desktop/notifications" = {
-      show-in-lock-screen = false;
-    };
-
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      cursor-size = 32;
-      cursor-theme = "Adwaita";
-      gtk-theme = "adw-gtk3-dark";
-      icon-theme = "Adwaita";
-      enable-hot-corners = false;
-    };
-
-    "org/gnome/mutter" = {
-      edge-tiling = true;
-    };
-
-    "org/gnome/desktop/session" = {
-      idle-delay = mkUint32 600;
-    };
-
-    "org/gnome/settings-daemon/plugins/power" = {
-      sleep-inactive-ac-timeout = 5400;
-    };
-
-    "org/gnome/desktop/peripherals/touchpad" = {
-      natural-scroll = false;
-      tap-to-click = true;
-      two-finger-scrolling-enabled = true;
-    };
-
-    "org/gnome/desktop/wm/keybindings" = {
-      close = [ "<Super>q" ];
-    };
-
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      binding = "<Super>Return";
-      command = "kitty";
-      name = "Kitty";
-    };
   };
 }

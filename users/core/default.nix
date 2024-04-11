@@ -16,9 +16,11 @@
   ];
 
   fonts.fontconfig.enable = true;
+
   home.packages = [
     (pkgs.nerdfonts.override {
       fonts = [ "JetBrainsMono" ];
     })
+    pkgs.dconf2nix
   ];
 }
