@@ -7,6 +7,8 @@
     ./cli/eza.nix
     ./cli/tmux.nix
     ./cli/starship.nix
+    ./cli/git.nix
+    ./cli/lazygit.nix
     ./applications/kitty.nix
     # TODO:neovim
     # TODO:Different Desktops
