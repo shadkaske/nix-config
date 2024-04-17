@@ -4,7 +4,7 @@
     theme = "Catppuccin-Mocha";
     font = {
       # package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
-      name = "JetBrainsMono Nerd Font Thin";
+      name = "JetBrainsMono NFM Thin";
       size = 13.0;
     };
     settings = {

@@ -8,6 +8,9 @@
     fd
     python3
     virtualenv
+    gcc
+    nodejs_21
+    ripgrep
   ];
 
   programs.neovim = {
